@@ -1,0 +1,4 @@
+{
+  "plugins": ["transform-vue-jsx", "@babel/plugin-transform-runtime", "transform-remove-strict-mode"],
+  "ignore":["./assets/mui/js/mui.min.js"]
+}

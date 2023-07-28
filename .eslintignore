@@ -1,0 +1,8 @@
+/build/
+/config/
+/dist/
+/*.js
+src/assets/mui/js/mui.min.js
+main.js
+src/utils/common/
+src/components/common
