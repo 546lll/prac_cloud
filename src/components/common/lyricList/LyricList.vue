@@ -44,7 +44,6 @@ export default {
     // 通过监听showLyric判断歌词有没有被渲染完（要通过this.$nextTick，保证dom结构的更新）
     showLyric (cur) {
       if (cur) {
-        // console.log('是不是该加载歌词了')
         this.$nextTick(() => {
           this.topHeight = document.getElementsByClassName('LyricListContent')[0].clientHeight * 0.45
           // console.log(this.spansHeight)
@@ -60,6 +59,7 @@ export default {
             }
           }
         })
+        // 根据进度条更新歌词的位置
         this.seeked()
       }    
     }
@@ -77,7 +77,7 @@ export default {
         }
       }
     },
-    // 拖动进度条
+    // 根据进度条更新歌词的位置
     seeked () {
       if (this.showLyric && this.lyricText.length) {
         let seekIndex = this.lyricTime.filter(item => this.$store.state.navMusicDom.currentTime >= item).length // 改变进度条歌词应该停留的位置
